@@ -1,6 +1,6 @@
 # Setup Guide
 
-This guide walks you through setting up the Claude Code Skills Collection from scratch.
+This inherited guide describes setup examples, **NOT RUN** in the 2026-11-12 source review. Read [reference-fork provenance, license boundaries, and setup limitations](REFERENCE-AND-SAFETY.md) before any installation. The four restricted document skills are not covered by a blanket MIT grant. Prefer a selected, reviewed, project-local skill; do not copy the whole collection globally. Minimum versions, client syntax, and expected outputs below are inherited and unverified. Review permissions rather than approving broad allowlists.
 
 ## Table of Contents
 
@@ -48,8 +48,8 @@ npm --version
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-code-skills.git
-cd claude-code-skills
+git clone https://github.com/JDKristenson/claude-code-polished-documents-skills.git
+cd claude-code-polished-documents-skills
 ```
 
 ### Step 2: Set Up Python Environment
@@ -102,7 +102,7 @@ mkdir -p .claude/skills
 cp -r /path/to/claude-code-skills/.claude/skills/* .claude/skills/
 ```
 
-### Method 2: Global Installation (Recommended)
+### Method 2: Global Installation (Inherited example; not recommended for this bundle)
 
 Install skills globally so they're available in all projects:
 
@@ -141,7 +141,7 @@ done
 Using a virtual environment:
 - Isolates dependencies from system Python
 - Prevents conflicts with other projects
-- Makes dependencies reproducible
+- Isolates dependencies, but does not make versions reproducible without pins/locks
 
 ### Setup Commands
 
@@ -247,7 +247,7 @@ claude
 /skill document-polisher
 ```
 
-You should see the brand selection menu.
+The inherited guide expects a brand selection menu; this was not checked. These are future manual checks only after license and setup review.
 
 ### Test Document Generation
 

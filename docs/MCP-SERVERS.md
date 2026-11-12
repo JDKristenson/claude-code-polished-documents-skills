@@ -1,6 +1,6 @@
 # MCP Server Configuration Guide
 
-This guide covers setting up MCP (Model Context Protocol) servers to extend Claude Code's capabilities, specifically the **FireCrawl MCP server** for extracting brand identity from websites.
+This inherited guide describes optional MCP examples. **NOT RUN / UNVERIFIED:** package names, CLI flags, config locations, environment substitution, tool schemas, pricing, and provider behavior below were not validated. Consult current [FireCrawl documentation](https://docs.firecrawl.dev/) and client documentation before use. Read [license, setup, and credential boundaries](REFERENCE-AND-SAFETY.md) first. Built-in themes do not require a provider. No provider or credential validity probes were made.
 
 ## Table of Contents
 
@@ -45,7 +45,7 @@ FireCrawl is a web scraping API that extracts structured data from websites. The
 
 1. Go to [firecrawl.dev](https://firecrawl.dev)
 2. Click "Sign Up" or "Get Started"
-3. Create an account (free tier available)
+3. Review current account terms and pricing before creating an account; availability is not verified here
 4. Navigate to Dashboard → API Keys
 5. Generate a new API key
 6. Copy and save it securely
@@ -56,16 +56,9 @@ FireCrawl is a web scraping API that extracts structured data from websites. The
 
 ## Installation Methods
 
-### Method 1: Claude Code CLI (Recommended)
+### Method 1: Client-supported secret injection
 
-The simplest way to add an MCP server:
-
-```bash
-claude mcp add firecrawl \
-  --command "npx" \
-  --args "-y" "@anthropic/firecrawl-mcp" \
-  --env "FIRECRAWL_API_KEY=fc-your-api-key-here"
-```
+Confirm current package identity and client configuration syntax with official documentation. Use the client's supported secret store or protected environment injection. Do not put a real key in CLI arguments, shell history, prompts, or tracked files. This review does not supply a verified install command.
 
 ### Method 2: Manual Configuration
 
@@ -107,10 +100,7 @@ For project-specific MCP servers, create `.claude/mcp.json` in your project:
 }
 ```
 
-Then set the environment variable:
-```bash
-export FIRECRAWL_API_KEY="fc-your-api-key-here"
-```
+Provide any required environment variable through protected local injection, not a literal value typed into shell history. The `${FIRECRAWL_API_KEY}` JSON string above is an inherited illustration; whether a client expands it must be verified, not assumed.
 
 ---
 
@@ -270,12 +260,7 @@ Extract branding from these websites and create a comparison table:
 
 Database access and management:
 
-```bash
-claude mcp add supabase \
-  --command "npx" \
-  --args "-y" "@supabase/mcp-server-supabase@latest" \
-  --env "SUPABASE_ACCESS_TOKEN=your-token"
-```
+An inherited optional integration reference, not configured or validated here. Confirm the current official package and use protected secret injection; never put an access token into chat or shell arguments.
 
 ### 21st Magic (UI Components)
 
@@ -309,15 +294,17 @@ claude mcp add filesystem \
    node --version
    ```
 
-2. **Verify configuration syntax**: JSON must be valid
-   ```bash
-   cat ~/.claude/mcp_servers.json | python -m json.tool
-   ```
+2. **Inspect configuration locally** using the current client's documented location. Do not print full configs or parser diagnostics that can expose values.
 
-3. **Check API key**: Ensure it's set correctly
+3. **Check presence only**, without printing the key:
    ```bash
-   echo $FIRECRAWL_API_KEY
+   if [ -n "${FIRECRAWL_API_KEY:-}" ]; then
+     printf '%s\n' 'FIRECRAWL_API_KEY is set (value not shown)'
+   else
+     printf '%s\n' 'FIRECRAWL_API_KEY is not set'
+   fi
    ```
+   This does not validate the key, account, permissions, or service. This check was not run here.
 
 ### "Tool not found" Errors
 

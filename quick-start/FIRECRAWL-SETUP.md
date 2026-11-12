@@ -1,6 +1,6 @@
 # FireCrawl Setup Guide
 
-**Want to extract branding from ANY website and turn it into a document theme?**
+**Inherited optional provider guide — NOT RUN / UNVERIFIED.** Read [provenance, license boundaries, and safe setup](../docs/REFERENCE-AND-SAFETY.md) first. Package names, client commands, tools, pricing, and provider behavior here are not validated. Do not paste keys into chat or commands, print configuration values, or test real credentials to validate this guide. Confirm current official documentation before setup.
 
 FireCrawl lets you scrape a company's website and automatically extract their colors, fonts, and styling. Then you can apply that branding to your documents!
 
@@ -12,7 +12,7 @@ FireCrawl lets you scrape a company's website and automatically extract their co
 - You're happy with the 10 built-in brand themes (McKinsey, Stripe, Apple, etc.)
 - You just want to polish documents with existing styles
 
-**You DO need FireCrawl if:**
+**The inherited FireCrawl workflow proposes these uses (not requirements; manual theme configuration is also possible):**
 - You want to extract branding from a client's website
 - You want to create custom themes from any company
 - You want to match a specific brand not in the default list
@@ -53,40 +53,27 @@ Open the signup page for me and tell me exactly what to click.
 
 ## Step 2: Add FireCrawl to Claude Code
 
-### Option A: One-Line Setup (Easiest)
+### Option A: Review a Safe Setup Plan
 
-Paste this into Claude Code, replacing `YOUR_API_KEY` with your actual key:
-
-```
-Add the FireCrawl MCP server to Claude Code with API key: fc-YOUR_API_KEY_HERE
-
-Run this command:
-claude mcp add firecrawl --command "npx" --args "-y" "@anthropic/firecrawl-mcp" --env "FIRECRAWL_API_KEY=fc-YOUR_API_KEY_HERE"
+```text
+Explain the current official FireCrawl/client setup documentation and permissions.
+Do not install or contact a provider yet. Do not ask me to paste credentials.
+Propose a supported local secret-store or protected environment-injection plan.
 ```
 
 ### Option B: Have Claude Do Everything
 
 Paste this and Claude will guide you:
 
-```
-I have my FireCrawl API key: fc-YOUR_API_KEY_HERE
-
-Please:
-1. Add the FireCrawl MCP server to my Claude Code
-2. Verify it's working
-3. Test it by extracting branding from stripe.com
+```text
+I will keep credentials in a protected local store, outside this conversation.
+Help me review configuration scope and current official client/provider guidance.
+Do not display values, read full secret configs, or run credential-validity probes.
 ```
 
 ### Option C: Manual Setup
 
-If you prefer to do it yourself:
-
-```bash
-claude mcp add firecrawl \
-  --command "npx" \
-  --args "-y" "@anthropic/firecrawl-mcp" \
-  --env "FIRECRAWL_API_KEY=fc-YOUR_API_KEY_HERE"
-```
+Use the current [official FireCrawl documentation](https://docs.firecrawl.dev/) and the client's supported secret configuration. No verified install command is supplied here. Do not enter real values in shell arguments/history or tracked configuration.
 
 ---
 
@@ -143,9 +130,9 @@ The FireCrawl MCP tools aren't showing up. Help me debug:
 Paste this:
 ```
 I'm getting API key errors with FireCrawl. Help me:
-1. Verify my key format (should start with fc-)
-2. Check if I need to regenerate it on firecrawl.dev
-3. Update the MCP configuration with the correct key
+1. Explain current official credential setup guidance without reading my key
+2. Check presence only, with values hidden; do not validate against the provider
+3. Keep all credential updates in a protected local store, not this chat
 ```
 
 ### "Rate limit exceeded"
@@ -195,25 +182,10 @@ Use FireCrawl to compare the branding of https://[SITE1] and https://[SITE2]
 
 ## Free Tier Limits
 
-FireCrawl's free tier includes:
-- ~500 pages/month
-- Basic rate limiting
-- All extraction features
-
-This is plenty for:
-- Extracting 10-20 brand themes
-- Occasional client website scraping
-- Personal/small team use
-
-If you need more, check https://firecrawl.dev/pricing
+The inherited guide included free-tier estimates; these were not validated and are not a current offer. Check [official pricing](https://firecrawl.dev/pricing) and terms before any provider use. No subscription or service use was performed here.
 
 ---
 
 ## Security Note
 
-Your API key is stored locally in your Claude Code MCP configuration. It's NOT:
-- Uploaded to GitHub (if you use our .gitignore)
-- Shared with anyone
-- Stored in the cloud
-
-Keep your key private and don't share it in public repos or chats!
+Storage and transmission depend on the actual client/provider configuration; this review establishes no local-only or non-sharing guarantee. A `.gitignore` alone cannot prevent exposure in logs, backups, screenshots, or shell history. Never share keys in prompts, repos, reports, or chats. Use [presence-only diagnostics](../docs/REFERENCE-AND-SAFETY.md#credentials-and-diagnostics), not value printing or validity probes. No credential checks were run.

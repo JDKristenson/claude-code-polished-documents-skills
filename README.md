@@ -1,24 +1,35 @@
 # Claude Code Skills Collection
 
-> **Transform documents into professionally-styled masterpieces with world-class brand aesthetics**
+> **Reference fork — inherited document skills with a documented provenance and safety review.**
+
+This is a reference/learning fork of [michellelandon's collection](https://github.com/michellelandon/claude-code-polished-documents-skills), also linked by the inherited documentation as [promptadvisers' collection](https://github.com/promptadvisers/claude-code-polished-documents-skills). Before this documentation cleanup, all three default heads resolved to [`d4c4509`](https://github.com/JDKristenson/claude-code-polished-documents-skills/commit/d4c4509ae85f44d6c95b2cdebc5f5746845a3664) on 2026-11-12. No JD-specific implementation delta was evidenced at that baseline. This cleanup adds documentation and an original editable map, not authorship of the inherited skills.
+
+**Read [provenance, license boundaries, and safe setup](docs/REFERENCE-AND-SAFETY.md) first.** This is not a uniformly MIT-licensed bundle. Four document skills contain restrictive Anthropic terms; copying everything globally is not a recommended setup. All native setup, document processing, and provider behavior described below are **NOT RUN** in this review. Inherited feature descriptions are not verified guarantees.
+
+[Workflow preview](docs/portfolio-workflow.svg) · [Editable Excalidraw source](docs/portfolio-workflow.excalidraw)
+
+![Source-inferred workflow and provenance](docs/portfolio-workflow.svg)
 
 A comprehensive collection of Claude Code skills for document generation, styling, and manipulation. Includes the **Document Polisher** skill that applies premium brand styling (McKinsey, Deloitte, Stripe, Apple, and more) to your documents, plus essential skills for working with DOCX, PDF, XLSX, and PPTX files.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[License boundaries: MIT / Apache-2.0 / OFL / restricted terms](docs/REFERENCE-AND-SAFETY.md#license-boundaries)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-Skills-orange.svg)
 
 ---
 
 ## New to This? Start Here!
 
-**Don't want to read documentation?** Just copy-paste prompts directly into Claude Code!
+Start with the source and license review below; automated setup is not a substitute for it.
 
-### One-Line Setup
+### Review Before Setup
 
-Open Claude Code anywhere and paste this:
+Use this review-only prompt before authorizing any installation:
 
-```
-Clone https://github.com/promptadvisers/claude-code-polished-documents-skills and set it up for me - install the Python environment, copy skills to ~/.claude/skills/, and test it works.
+```text
+Review this reference fork's README and docs/REFERENCE-AND-SAFETY.md.
+Explain the selected skill's license and dependencies first. Do not install,
+copy skills, change permissions, process documents, or contact providers yet.
+Do not request or display credentials. Propose a project-local plan for review.
 ```
 
 ### More Prompts
@@ -58,8 +69,8 @@ Transform plain documents into professionally-styled reports with 10 premium bra
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-code-skills.git
-cd claude-code-skills
+git clone https://github.com/JDKristenson/claude-code-polished-documents-skills.git
+cd claude-code-polished-documents-skills
 ```
 
 ### 2. Set Up Python Environment
@@ -79,19 +90,14 @@ pip install python-docx
 
 ### 3. Copy Skills to Claude Code
 
-Copy the `.claude/skills` folder to your project or global Claude Code directory:
-
-```bash
-# For project-specific skills
-cp -r .claude/skills /path/to/your/project/.claude/
-
-# For global skills (available in all projects)
-cp -r .claude/skills ~/.claude/skills/
-```
+Review the selected skill's terms before copying anything. Prefer a project-local,
+selective setup; do not copy this mixed-license bundle wholesale. See the
+[setup limitations](docs/REFERENCE-AND-SAFETY.md#setup-status-not-run).
+Installing `python-docx` alone does not prepare every bundled skill.
 
 ### 4. Configure Permissions
 
-Copy the example settings file and customize:
+Review the example settings before copying or enabling any permissions; it is not a least-privilege policy. The following is an inherited, untested example, not an instruction to approve broad execution:
 
 ```bash
 cp .claude/settings.example.json .claude/settings.local.json
@@ -165,18 +171,16 @@ The FireCrawl MCP server enables extracting brand identity from any website to c
 
 ### Add MCP Server to Claude Code
 
-**Option 1: Via Claude Code CLI**
+**Optional provider setup — not validated here.** Confirm the current package,
+CLI syntax, configuration location, and environment handling in the provider's
+and client's official documentation before installing anything. Use a supported
+local secret store or protected environment injection. Never paste a real key
+into chat, commands, screenshots, issues, or tracked files.
 
-```bash
-claude mcp add firecrawl \
-  --command "npx" \
-  --args "-y" "@anthropic/firecrawl-mcp" \
-  --env "FIRECRAWL_API_KEY=your_api_key_here"
-```
+**Inherited configuration illustration — not a validated configuration.**
+`your_api_key_here` below is a placeholder only; do not replace it in tracked files.
 
-**Option 2: Manual Configuration**
-
-Add to your Claude Code MCP settings (`~/.claude/mcp_servers.json`):
+The inherited example names `~/.claude/mcp_servers.json`; verify the actual location and supported secret handling in current client documentation:
 
 ```json
 {
@@ -331,12 +335,15 @@ When adding new brand themes:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+The root [LICENSE](LICENSE) contains MIT text and third-party caveats. Nested terms govern their respective material: see the [license boundary inventory](docs/REFERENCE-AND-SAFETY.md#license-boundaries). This README does not grant rights to restricted skills, fonts, or third-party assets.
 
 ---
 
 ## Acknowledgments
 
+- Upstream collection: [michellelandon](https://github.com/michellelandon/claude-code-polished-documents-skills); inherited history records [promptadvisers](https://github.com/promptadvisers) and Claude Code/Claude co-authorship. Repository names and commit author fields do not establish sole human authorship.
+- Anthropic and community skill/font authors retain their notices and terms. This cleanup preserves all inherited payloads, licenses, and notices unchanged.
+- Documentation cleanup and original workflow/provenance map prepared for JD with Reason AI assistance; no claim of original skill implementation.
 - Built for [Claude Code](https://claude.com/claude-code) by Anthropic
 - Brand extraction powered by [FireCrawl](https://firecrawl.dev)
 - Document generation with [python-docx](https://python-docx.readthedocs.io/)
@@ -345,8 +352,8 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/claude-code-skills/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/claude-code-skills/discussions)
+- **Repository**: [JD's reference fork](https://github.com/JDKristenson/claude-code-polished-documents-skills). Issues and Discussions were disabled at the review date; this cleanup does not enable them.
+- **Upstream**: [Michelle Landon's collection](https://github.com/michellelandon/claude-code-polished-documents-skills). Check its available support channels rather than assuming an issue tracker exists.
 - **Claude Code Help**: Run `/help` in Claude Code
 
 ---

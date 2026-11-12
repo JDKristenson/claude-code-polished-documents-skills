@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-Common issues and solutions for the Claude Code Skills Collection.
+Inherited troubleshooting examples for the Claude Code Skills Collection. **NOT RUN:** no installation, script, provider, credential validity, or native document checks were performed. Read [the safety and provenance note](REFERENCE-AND-SAFETY.md) first. Review selected skill licenses and permissions before executing commands; these are not verified fixes. Do not share raw logs, configurations, private paths, or documents.
 
 ## Table of Contents
 
@@ -176,23 +176,13 @@ Common issues and solutions for the Claude Code Skills Collection.
    # Needs 18+
    ```
 
-2. **Verify configuration**:
-   ```bash
-   cat ~/.claude/mcp_servers.json
-   ```
+2. **Inspect configuration locally**, using the current client's documented location. Do not print or share a full configuration; it may contain credentials.
 
-3. **Check for JSON syntax errors**:
-   ```bash
-   python -m json.tool ~/.claude/mcp_servers.json
-   ```
+3. **Check syntax without disclosing contents**. Use a local editor or a tool that suppresses both content and parser error context. Sanitize any diagnostic before sharing.
 
 4. **Restart Claude Code** after config changes
 
-5. **Check API key** is set correctly:
-   ```bash
-   # In config, should look like:
-   "FIRECRAWL_API_KEY": "fc-actual-key-here"
-   ```
+5. **Check presence only**, without displaying the value, using the example in [Credentials and diagnostics](REFERENCE-AND-SAFETY.md#credentials-and-diagnostics). Presence does not establish validity; do not probe the provider with a real key to validate this guide.
 
 ### FireCrawl Rate Limit Errors
 

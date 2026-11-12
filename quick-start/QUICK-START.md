@@ -1,24 +1,24 @@
 # Quick Start Guide
 
-**Can't figure out the setup? Just copy and paste these prompts into Claude Code!**
+**Reference fork — review before setup.** Read [provenance, license boundaries, setup status, and safety](../docs/REFERENCE-AND-SAFETY.md) first. Native setup and every usage example below are **NOT RUN**. Provider package/tool claims are unverified. Do not copy the mixed-license collection globally, share keys in prompts, approve broad permissions, or use real/private documents for trials.
 
-This guide provides ready-to-use prompts that you can send directly to Claude Code to set everything up automatically.
+This guide retains usage prompts for context, but starts with a review-only plan. No automatic setup success is claimed.
 
 ---
 
-## Super Quick Start (30 seconds)
+## Review-First Start (No Timing Guarantee)
 
 Just paste this ONE prompt into Claude Code:
 
 ```
-Clone https://github.com/promptadvisers/claude-code-polished-documents-skills and set it up completely:
-1. Clone the repo
-2. Create Python virtual environment and install python-docx
-3. Copy all skills to ~/.claude/skills/
-4. Test by creating a sample document with McKinsey styling
+Review https://github.com/JDKristenson/claude-code-polished-documents-skills
+and its README and docs/REFERENCE-AND-SAFETY.md.
+Explain the selected skill's provenance, license, dependencies, and risks first.
+Propose a project-local setup plan; do not install, copy skills, change permissions,
+run scripts, or contact providers yet. Never ask for or display credentials.
 ```
 
-That's it! Skip to "Test the Document Polisher Skill" below to verify it worked.
+This produces a review plan, not a working installation. Runtime examples below require separate license/setup review and synthetic input with a distinct output path.
 
 ---
 
@@ -29,14 +29,12 @@ That's it! Skip to "Test the Document Polisher Skill" below to verify it worked.
 Open Claude Code in any directory and paste this prompt:
 
 ```
-Clone the claude-code-polished-documents-skills repository from GitHub and set it up for me:
-https://github.com/promptadvisers/claude-code-polished-documents-skills
+Review the claude-code-polished-documents-skills reference fork:
+https://github.com/JDKristenson/claude-code-polished-documents-skills
 
-After cloning:
-1. Create a Python virtual environment
-2. Install python-docx
-3. Copy the skills to my global Claude skills folder at ~/.claude/skills/
-4. Verify everything is set up correctly
+After cloning, review the selected skill's license and dependencies.
+Propose a selective project-local plan without overwriting existing skills.
+Do not install, copy restricted skills, run scripts, or contact providers yet.
 ```
 
 ---
