@@ -1,37 +1,36 @@
 # Copy-Paste Prompts for Claude Code
 
-Just copy any of these prompts and paste them directly into Claude Code.
+These are inherited usage examples, **NOT RUN** in this review. Read [provenance, license boundaries, and setup limitations](../docs/REFERENCE-AND-SAFETY.md) first. Use only selected skills with appropriate rights and disposable synthetic documents; never use real/private documents or overwrite an input. Provider commands/tools are unverified, and no keys belong in prompts.
 
 ---
 
 ## Setup Prompts
 
-### Complete Auto-Setup (Recommended)
+### Review-First Setup
 ```
 I want to use the document-polisher skill from this repo:
-https://github.com/promptadvisers/claude-code-polished-documents-skills
+https://github.com/JDKristenson/claude-code-polished-documents-skills
 
-Please:
-1. Clone it to a suitable location
-2. Set up the Python environment with python-docx
-3. Install the skills globally to ~/.claude/skills/
-4. Configure the necessary permissions
-5. Test that everything works by creating a sample styled document
+Please review its README and docs/REFERENCE-AND-SAFETY.md first.
+Explain provenance, the selected skill's license, dependencies, and risks.
+Propose a selective project-local plan without installing, copying skills,
+changing permissions, running scripts, or contacting providers yet.
+Never ask for or display credentials.
 ```
 
 ### Manual Clone + Setup
 ```
-git clone https://github.com/promptadvisers/claude-code-polished-documents-skills.git
+git clone https://github.com/JDKristenson/claude-code-polished-documents-skills.git
 
-Then set up the Python environment and install the skills for me.
+Then review license boundaries and propose a selected project-local setup plan.
+Do not install dependencies, copy skills, or run scripts yet.
 ```
 
 ### Install Skills Only (If Already Cloned)
 ```
-Copy the skills from ./claude-code-polished-documents-skills/.claude/skills/
-to my global Claude skills directory at ~/.claude/skills/
-
-Then verify they're accessible.
+Review the selected skill's license and dependencies in this reference fork.
+Propose a project-local plan that does not overwrite existing skills.
+Do not copy the entire bundle or change global configuration.
 ```
 
 ---
@@ -47,11 +46,11 @@ Set up the FireCrawl MCP server for me:
 ```
 
 ### Add MCP with Existing API Key
-```
-Add the FireCrawl MCP server to Claude Code with this API key: [YOUR_KEY]
-
-Use this command:
-claude mcp add firecrawl --command "npx" --args "-y" "@anthropic/firecrawl-mcp" --env "FIRECRAWL_API_KEY=[YOUR_KEY]"
+```text
+Review the current official FireCrawl and client setup guidance.
+Keep credentials in a supported local secret store or protected environment.
+Never ask me to paste a key into chat, display it, or place it in shell arguments.
+Do not install, contact providers, or validate credentials yet.
 ```
 
 ---
